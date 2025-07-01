@@ -182,7 +182,7 @@
             <div :class="$style.footerContainer">
                 <p :class="$style.footerText">
                     © {{ currentYear }} Профессиональные танцевальные номера.
-                    Челябинск и область.
+                    Челябинск и область.1
                 </p>
             </div>
         </footer>
