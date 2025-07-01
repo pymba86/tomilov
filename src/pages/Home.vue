@@ -201,31 +201,6 @@ import {
 // Reactive data
 const currentYear = computed(() => new Date().getFullYear());
 
-// Custom icon components
-const MusicIcon = {
-    template: `
-    <svg fill="currentColor" viewBox="0 0 24 24">
-      <path d="M12 3v10.55c-.59-.34-1.27-.55-2-.55-2.21 0-4 1.79-4 4s1.79 4 4 4 4-1.79 4-4V7h4V3h-6z" />
-    </svg>
-  `,
-};
-
-const CheckIcon = {
-    template: `
-    <svg fill="currentColor" viewBox="0 0 24 24">
-      <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z" />
-    </svg>
-  `,
-};
-
-const CalendarIcon = {
-    template: `
-    <svg fill="currentColor" viewBox="0 0 24 24">
-      <path d="M9 11H7v6h2v-6zm4 0h-2v6h2v-6zm4 0h-2v6h2v-6zm2.5-9H19V1h-2v1H7V1H5v1H4.5C3.67 2 3 2.67 3 3.5v15C3 19.33 3.67 20 4.5 20h15c.83 0 1.5-.67 1.5-1.5v-15C21 2.67 20.33 2 19.5 2z" />
-    </svg>
-  `,
-};
-
 const services = ref([
     {
         id: 1,
@@ -238,21 +213,39 @@ const services = ref([
         id: 2,
         title: "Подбор музыки",
         description: "И стиля под тематику свадьбы",
-        icon: MusicIcon,
+        icon: {
+            template: `
+    <svg fill="currentColor" viewBox="0 0 24 24">
+      <path d="M12 3v10.55c-.59-.34-1.27-.55-2-.55-2.21 0-4 1.79-4 4s1.79 4 4 4 4-1.79 4-4V7h4V3h-6z" />
+    </svg>
+  `,
+        },
         iconClass: "iconPurple",
     },
     {
         id: 3,
         title: "Участие молодоженов",
         description: "Возможность участия в номере жениха и невесты",
-        icon: CheckIcon,
+        icon: {
+            template: `
+    <svg fill="currentColor" viewBox="0 0 24 24">
+      <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z" />
+    </svg>
+  `,
+        },
         iconClass: "iconGreen",
     },
     {
         id: 4,
         title: "Полный спектр услуг",
         description: "От идеи до реализации",
-        icon: CalendarIcon,
+        icon: {
+            template: `
+    <svg fill="currentColor" viewBox="0 0 24 24">
+      <path d="M9 11H7v6h2v-6zm4 0h-2v6h2v-6zm4 0h-2v6h2v-6zm2.5-9H19V1h-2v1H7V1H5v1H4.5C3.67 2 3 2.67 3 3.5v15C3 19.33 3.67 20 4.5 20h15c.83 0 1.5-.67 1.5-1.5v-15C21 2.67 20.33 2 19.5 2z" />
+    </svg>
+  `,
+        },
         iconClass: "iconOrange",
     },
 ]);
