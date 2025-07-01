@@ -7,7 +7,7 @@
     ],
     "scripts": {
         "dev": "vite",
-        "build": "vite-ssg build && mv dist docs",
+        "build": "vite-ssg build && cp CNAME docs/CNAME",
         "serve": "vite-ssg preview"
     },
     "dependencies": {
