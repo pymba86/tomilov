@@ -57,7 +57,7 @@
                     </div>
                     <div :class="$style.aboutImageContainer">
                         <img
-                            :src="placeholder"
+                            src="/placeholder.svg?height=500&width=400"
                             alt="Танцевальный номер"
                             :class="$style.aboutImage"
                         />
@@ -197,7 +197,7 @@ import {
     Instagram as InstagramIcon,
     Users as UsersIcon,
 } from "lucide-vue-next";
-import placeholder from "../assets/placeholder.svg?height=500&width=400";
+
 // Reactive data
 const currentYear = computed(() => new Date().getFullYear());
 
@@ -234,27 +234,27 @@ const services = ref([
 
 const galleryImages = ref([
     {
-        src: "assets/placeholder.svg?height=400&width=300",
+        src: "/placeholder.svg?height=400&width=300",
         alt: "Танцевальный номер 1",
     },
     {
-        src: "assets/placeholder.svg?height=400&width=300",
+        src: "/placeholder.svg?height=400&width=300",
         alt: "Танцевальный номер 2",
     },
     {
-        src: "assets/placeholder.svg?height=400&width=300",
+        src: "/placeholder.svg?height=400&width=300",
         alt: "Танцевальный номер 3",
     },
     {
-        src: "assets/placeholder.svg?height=400&width=300",
+        src: "/placeholder.svg?height=400&width=300",
         alt: "Танцевальный номер 4",
     },
     {
-        src: "assets/placeholder.svg?height=400&width=300",
+        src: "/placeholder.svg?height=400&width=300",
         alt: "Танцевальный номер 5",
     },
     {
-        src: "assets/placeholder.svg?height=400&width=300",
+        src: "/placeholder.svg?height=400&width=300",
         alt: "Танцевальный номер 6",
     },
 ]);
