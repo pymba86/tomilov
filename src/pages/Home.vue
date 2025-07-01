@@ -190,7 +190,7 @@
 </template>
 
 <script setup>
-import { ref, computed } from "vue";
+import { ref, computed, useCssModule } from "vue";
 import {
     Phone as PhoneIcon,
     MessageCircle as MessageCircleIcon,
@@ -204,34 +204,36 @@ import {
 // Reactive data
 const currentYear = computed(() => new Date().getFullYear());
 
+const styles = useCssModule();
+
 const services = ref([
     {
         id: 1,
         title: "Оригинальные постановки",
         description: "Под ваш бюджет и пожелания",
         icon: UsersIcon,
-        iconClass: "iconPink",
+        iconClass: styles.iconPink,
     },
     {
         id: 2,
         title: "Подбор музыки",
         description: "И стиля под тематику свадьбы",
         icon: MusicIcon,
-        iconClass: "iconPurple",
+        iconClass: styles.iconPurple,
     },
     {
         id: 3,
         title: "Участие молодоженов",
         description: "Возможность участия в номере жениха и невесты",
         icon: CheckIcon,
-        iconClass: "iconGreen",
+        iconClass: styles.iconGreen,
     },
     {
         id: 4,
         title: "Полный спектр услуг",
         description: "От идеи до реализации",
         icon: CalendarIcon,
-        iconClass: "iconOrange",
+        iconClass: styles.iconOrange,
     },
 ]);
 
