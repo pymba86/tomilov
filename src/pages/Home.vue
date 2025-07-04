@@ -372,7 +372,7 @@ const contactMethods: ContactMethod[] = [
 
 .title {
   font-size: calc(1.5em + 1.5vw);
-  font-weight: 300;
+  font-weight: 500;
   color: #dc2626;
   line-height: 1.1;
 }
