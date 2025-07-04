@@ -9,19 +9,16 @@
             <div :class="$style.heroText">
               <div :class="$style.titleSection">
                 <h1 :class="$style.title">
-                  Привет,<br />
-                  уверен<br />
-                  ты здесь не<br />
-                  случайно!
+                  Профессиональные танцевальные номера для вашей свадьбы
                 </h1>
                 <p :class="$style.subtitle">
-                  *Если нужно, чтобы свадьба запомнилась яркими танцевальными номерами - это ко мне.
+                  Если нужно, чтобы свадьба запомнилась яркими танцевальными номерами - это ко мне.
                 </p>
               </div>
 
               <div :class="$style.authorSection">
                 <div>
-                  <h2 :class="$style.authorName">Томилов Вадим</h2>
+                  <h2 :class="$style.authorName">Вадим Томилов</h2>
                   <p :class="$style.authorDescription">
                     Профессиональный хореограф<br />
                     Более 5 лет опыта в Челябинске и области
@@ -182,11 +179,9 @@
 
     <!-- Footer -->
     <footer :class="$style.footer">
-      <div :class="$style.container">
-        <p :class="$style.footerText">
-          © {{ currentYear }} Томилов Вадим. Челябинск и область.
+      <p :class="$style.footerText">
+          © {{ currentYear }} Вадим Томилов. Челябинск и область.
         </p>
-      </div>
     </footer>
   </div>
 </template>
@@ -329,8 +324,7 @@ const contactMethods: ContactMethod[] = [
 
 <style module>
 .container {
-  min-height: 100vh;
-  background-color: white;
+
 }
 
 /* Hero Section */
@@ -338,6 +332,8 @@ const contactMethods: ContactMethod[] = [
   min-height: 100vh;
   display: flex;
   align-items: center;
+      padding-top: 2rem;
+    padding-bottom: 2rem;
 }
 
 .heroContent {
@@ -371,6 +367,7 @@ const contactMethods: ContactMethod[] = [
   display: flex;
   flex-direction: column;
   gap: 1rem;
+      margin-bottom: 1rem;
 }
 
 .title {
@@ -382,13 +379,13 @@ const contactMethods: ContactMethod[] = [
 
 @media (min-width: 768px) {
   .title {
-    font-size: 3.75rem;
+    font-size: 3rem;
   }
 }
 
 @media (min-width: 1024px) {
   .title {
-    font-size: 4.5rem;
+    font-size: 4rem;
   }
 }
 
@@ -483,7 +480,7 @@ const contactMethods: ContactMethod[] = [
 
 /* Services Section */
 .services {
-  padding: 5rem 1rem;
+  padding: 3rem 1rem;
   background-color: #f9fafb;
 }
 
@@ -491,7 +488,7 @@ const contactMethods: ContactMethod[] = [
   font-size: 1.875rem;
   font-weight: 300;
   color: #dc2626;
-  margin-bottom: 4rem;
+  margin-bottom: 2rem;
   text-align: center;
 }
 
@@ -539,7 +536,7 @@ const contactMethods: ContactMethod[] = [
 
 /* About Section */
 .about {
-  padding: 5rem 1rem;
+  padding: 3rem 1rem;
   background-color: white;
 }
 
@@ -561,7 +558,7 @@ const contactMethods: ContactMethod[] = [
 
 /* Portfolio Section */
 .portfolio {
-  padding: 5rem 1rem;
+  padding: 3rem 1rem;
   background-color: #f9fafb;
 }
 
@@ -601,7 +598,7 @@ const contactMethods: ContactMethod[] = [
 
 /* Contact Section */
 .contact {
-  padding: 5rem 1rem;
+  padding: 3rem 1rem;
   background-color: #dc2626;
   color: white;
   text-align: center;
@@ -610,7 +607,6 @@ const contactMethods: ContactMethod[] = [
 .contactTitle {
   font-size: 1.875rem;
   font-weight: 300;
-  margin-bottom: 2rem;
 }
 
 @media (min-width: 768px) {
@@ -711,9 +707,8 @@ const contactMethods: ContactMethod[] = [
 
 /* Footer */
 .footer {
-  padding: 2rem 1rem;
+  padding: 1rem 1rem;
   background-color: white;
-  border-top: 1px solid #e5e7eb;
 }
 
 .footerText {
