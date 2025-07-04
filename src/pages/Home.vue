@@ -346,7 +346,7 @@ const contactMethods: ContactMethod[] = [
 .heroGrid {
   display: grid;
   grid-template-columns: 1fr;
-  gap: 3rem;
+  gap: 2rem;
   align-items: center;
 }
 
@@ -500,7 +500,7 @@ const contactMethods: ContactMethod[] = [
 .servicesGrid {
   display: grid;
   grid-template-columns: 1fr;
-  gap: 3rem;
+  gap: 2rem;
   max-width: 1152px;
   margin: 0 auto;
 }
