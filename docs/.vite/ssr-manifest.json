@@ -1,7 +1,7 @@
 {
   "\u0000plugin-vue:export-helper": [],
   "\u0000vite/modulepreload-polyfill.js": [],
-  "../../../../../placeholder.svg?height=500&width=400": [],
+  "../../../../placeholder.svg?height=500&width=400": [],
   "index.html": [],
   "node_modules/@unhead/vue/dist/client.mjs": [],
   "node_modules/@unhead/vue/dist/shared/vue.BYLJNEcq.mjs": [],
