@@ -332,7 +332,7 @@ const contactMethods: ContactMethod[] = [
   min-height: 100vh;
   display: flex;
   align-items: center;
-      padding-top: 4rem;
+      padding-top: 2rem;
     padding-bottom: 2rem;
 }
 
@@ -374,7 +374,7 @@ const contactMethods: ContactMethod[] = [
 
 .title {
   font-size: calc(1.25em + 1.5vw);
-  font-weight: 300;
+  font-weight: 400;
   color: #dc2626;
   line-height: 1.1;
 }
@@ -392,7 +392,7 @@ const contactMethods: ContactMethod[] = [
 }
 
 .subtitle {
-  font-size: 1rem;
+  font-size: 1.125rem;
   color: #4b5563;
   max-width: 30rem;
 }
@@ -412,7 +412,7 @@ const contactMethods: ContactMethod[] = [
 
 .authorDescription {
   color: #4b5563;
-  font-size: 0.85rem;
+  opacity: 0.7
 }
 
 .buttonGroup {
@@ -469,7 +469,7 @@ const contactMethods: ContactMethod[] = [
 }
 
 .heroImage {
-  aspect-ratio: 3/4;
+  aspect-ratio: 3/2;
   position: relative;
   overflow: hidden;
   border-radius: 0.5rem;
@@ -489,7 +489,7 @@ const contactMethods: ContactMethod[] = [
 
 .sectionTitle {
   font-size: 1.875rem;
-  font-weight: 300;
+  font-weight: 400;
   color: #dc2626;
   margin-bottom: 2rem;
   text-align: center;
@@ -528,7 +528,7 @@ const contactMethods: ContactMethod[] = [
 
 .serviceTitle {
   font-size: 1.25rem;
-  font-weight: 300;
+  font-weight: 400;
   color: #111827;
   margin-bottom: 0.5rem;
 }
@@ -586,7 +586,7 @@ const contactMethods: ContactMethod[] = [
 }
 
 .videoContainer {
-  aspect-ratio: 9/16;
+  aspect-ratio: 3/4;
   position: relative;
   overflow: hidden;
   border-radius: 0.5rem;
@@ -609,7 +609,7 @@ const contactMethods: ContactMethod[] = [
 
 .contactTitle {
   font-size: 1.875rem;
-  font-weight: 300;
+  font-weight: 400;
 }
 
 @media (min-width: 768px) {
