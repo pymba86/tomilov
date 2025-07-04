@@ -348,7 +348,6 @@ const contactMethods: ContactMethod[] = [
   grid-template-columns: 1fr;
   gap: 3rem;
   align-items: center;
-  min-height: 100vh;
 }
 
 @media (min-width: 1024px) {
@@ -372,7 +371,7 @@ const contactMethods: ContactMethod[] = [
 
 .title {
   font-size: calc(1.5em + 1.5vw);
-  font-weight: 500;
+  font-weight: 300;
   color: #dc2626;
   line-height: 1.1;
 }
