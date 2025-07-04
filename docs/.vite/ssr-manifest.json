@@ -1,7 +1,7 @@
 {
   "\u0000plugin-vue:export-helper": [],
   "\u0000vite/modulepreload-polyfill.js": [],
-  "../../../../placeholder.svg?height=500&width=400": [],
+  "../../../../placeholder.svg?height=800&width=600": [],
   "index.html": [],
   "node_modules/@unhead/vue/dist/client.mjs": [],
   "node_modules/@unhead/vue/dist/shared/vue.BYLJNEcq.mjs": [],
@@ -13,13 +13,9 @@
   "node_modules/lucide-vue-next/dist/esm/Icon.js": [],
   "node_modules/lucide-vue-next/dist/esm/createLucideIcon.js": [],
   "node_modules/lucide-vue-next/dist/esm/defaultAttributes.js": [],
-  "node_modules/lucide-vue-next/dist/esm/icons/calendar.js": [],
-  "node_modules/lucide-vue-next/dist/esm/icons/check.js": [],
   "node_modules/lucide-vue-next/dist/esm/icons/instagram.js": [],
   "node_modules/lucide-vue-next/dist/esm/icons/message-circle.js": [],
-  "node_modules/lucide-vue-next/dist/esm/icons/music.js": [],
   "node_modules/lucide-vue-next/dist/esm/icons/phone.js": [],
-  "node_modules/lucide-vue-next/dist/esm/icons/users.js": [],
   "node_modules/lucide-vue-next/dist/esm/shared/src/utils.js": [],
   "node_modules/unhead/dist/client.mjs": [],
   "node_modules/unhead/dist/shared/unhead.Bkc50x9u.mjs": [],
@@ -35,5 +31,6 @@
   "src/main.ts": [],
   "src/pages/About.vue": [],
   "src/pages/Home.vue": [],
+  "src/pages/Home.vue?vue&type=script&setup=true&lang.ts": [],
   "src/pages/Home.vue?vue&type=style&index=0&lang.module.css": []
 }
