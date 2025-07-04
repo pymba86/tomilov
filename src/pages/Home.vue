@@ -332,7 +332,7 @@ const contactMethods: ContactMethod[] = [
   min-height: 100vh;
   display: flex;
   align-items: center;
-      padding-top: 2rem;
+      padding-top: 4rem;
     padding-bottom: 2rem;
 }
 
@@ -354,6 +354,9 @@ const contactMethods: ContactMethod[] = [
   .heroGrid {
     grid-template-columns: 1fr 1fr;
   }
+  .hero {
+    padding-top: 2rem;
+  }
 }
 
 .heroLeft {
@@ -370,7 +373,7 @@ const contactMethods: ContactMethod[] = [
 }
 
 .title {
-  font-size: calc(1.5em + 1.5vw);
+  font-size: calc(1.25em + 1.5vw);
   font-weight: 300;
   color: #dc2626;
   line-height: 1.1;
@@ -389,9 +392,9 @@ const contactMethods: ContactMethod[] = [
 }
 
 .subtitle {
-  font-size: 1.125rem;
+  font-size: 1rem;
   color: #4b5563;
-  max-width: 28rem;
+  max-width: 30rem;
 }
 
 .authorSection {
@@ -409,6 +412,7 @@ const contactMethods: ContactMethod[] = [
 
 .authorDescription {
   color: #4b5563;
+  font-size: 0.85rem;
 }
 
 .buttonGroup {
@@ -493,7 +497,7 @@ const contactMethods: ContactMethod[] = [
 
 @media (min-width: 768px) {
   .sectionTitle {
-    font-size: 3rem;
+    font-size: 2rem;
   }
 }
 
@@ -524,7 +528,7 @@ const contactMethods: ContactMethod[] = [
 
 .serviceTitle {
   font-size: 1.25rem;
-  font-weight: 500;
+  font-weight: 300;
   color: #111827;
   margin-bottom: 0.5rem;
 }
@@ -610,14 +614,13 @@ const contactMethods: ContactMethod[] = [
 
 @media (min-width: 768px) {
   .contactTitle {
-    font-size: 3rem;
+    font-size: 2rem;
   }
 }
 
 .contactSubtitle {
-  font-size: 1.25rem;
   margin-bottom: 3rem;
-  opacity: 0.9;
+  opacity: 0.8;
 }
 
 .contactGrid {
