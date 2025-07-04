@@ -404,8 +404,8 @@ const contactMethods: ContactMethod[] = [
 }
 
 .authorName {
-  font-size: 1.5rem;
-  font-weight: 300;
+  font-size: 1.25rem;
+  font-weight: 500;
   color: #111827;
   margin-bottom: 0.5rem;
 }
