@@ -324,7 +324,7 @@ const contactMethods: ContactMethod[] = [
 
 <style module>
 .container {
-
+  max-width: 100%; /* Убедитесь, что контейнер не выходит за границы экрана */
 }
 
 /* Hero Section */
@@ -371,7 +371,7 @@ const contactMethods: ContactMethod[] = [
 }
 
 .title {
-  font-size: 2.5rem;
+  font-size: calc(1.5em + 1.5vw);
   font-weight: 300;
   color: #dc2626;
   line-height: 1.1;
@@ -379,13 +379,13 @@ const contactMethods: ContactMethod[] = [
 
 @media (min-width: 768px) {
   .title {
-    font-size: 3rem;
+    font-size: calc(2em + 1.5vw);
   }
 }
 
 @media (min-width: 1024px) {
   .title {
-    font-size: 4rem;
+    font-size: calc(2em + 1.5vw);
   }
 }
 
@@ -717,4 +717,5 @@ const contactMethods: ContactMethod[] = [
   max-width: 1152px;
   margin: 0 auto;
 }
+
 </style>
