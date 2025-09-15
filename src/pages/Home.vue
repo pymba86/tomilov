@@ -10,27 +10,22 @@
                             <div :class="$style.heroText">
                                 <div :class="$style.titleSection">
                                     <h1 :class="$style.title">
-                                        Профессиональные танцевальные номера для
-                                        вашей свадьбы
+                                        Профессиональная постановка свадебного
+                                        танца в Челябинске
                                     </h1>
                                     <p :class="$style.subtitle">
-                                        Если нужно, чтобы свадьба запомнилась
-                                        яркими танцевальными номерами - это ко
-                                        мне.
+                                        Создадим тот самый момент, который
+                                        останется в сердцах. Я верю, что главное
+                                        в свадебном танце – не идеальная
+                                        техника, а искренние эмоции. Моя цель –
+                                        помочь Вам выразить Ваши чувства через
+                                        движения, чтобы создать трогательное и
+                                        незабываемое воспоминание для Вас и
+                                        Ваших гостей
                                     </p>
                                 </div>
 
                                 <div :class="$style.authorSection">
-                                    <div>
-                                        <h2 :class="$style.authorName">
-                                            Вадим Томилов
-                                        </h2>
-                                        <p :class="$style.authorDescription">
-                                            Более 5 лет опыта в Челябинске и
-                                            области
-                                        </p>
-                                    </div>
-
                                     <div :class="$style.buttonGroup">
                                         <a
                                             :href="contacts.phone.href"
@@ -67,11 +62,34 @@
             </div>
         </section>
 
+        <!-- About Section -->
+        <section :class="$style.about">
+            <div :class="$style.container">
+                <h2 :class="$style.sectionTitle">
+                    Почему мне доверяют самые важные моменты
+                </h2>
+                <div :class="$style.aboutContent">
+                    <p :class="$style.aboutParagraph">
+                        Меня зовут <b>Вадим Томилов</b>. Я — действующий
+                        спортсмен и тренер по спортивным бальным танцам с опытом
+                        более 5 лет. Создаю не просто движения под музыку, а
+                        продуманные истории, уникальные для каждой пары. Как
+                        неоднократный призёр всероссийских и международных
+                        соревнований, я знаю, как сделать выступление эффектным
+                        и безупречным, чтобы ваш особенный день стал
+                        по-настоящему незабываемым
+                    </p>
+                </div>
+            </div>
+        </section>
+
         <!-- Services Section -->
         <section :class="$style.services">
             <div :class="$style.container">
                 <div :class="$style.serviceContainer">
-                    <h2 :class="$style.sectionTitle">Что я предлагаю</h2>
+                    <h2 :class="$style.sectionTitle">
+                        Полный спектр услуг для Вашего идеального номера
+                    </h2>
 
                     <div :class="$style.servicesGrid">
                         <div :class="$style.servicesColumn">
@@ -88,38 +106,7 @@
                                 </p>
                             </div>
                         </div>
-
-                        <div :class="$style.servicesColumn">
-                            <div
-                                v-for="service in servicesRight"
-                                :key="service.id"
-                                :class="$style.serviceItem"
-                            >
-                                <h3 :class="$style.serviceTitle">
-                                    {{ service.title }}
-                                </h3>
-                                <p :class="$style.serviceDescription">
-                                    {{ service.description }}
-                                </p>
-                            </div>
-                        </div>
                     </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- About Section -->
-        <section :class="$style.about">
-            <div :class="$style.container">
-                <h2 :class="$style.sectionTitle">О профессионале</h2>
-                <div :class="$style.aboutContent">
-                    <p
-                        v-for="paragraph in aboutText"
-                        :key="paragraph"
-                        :class="$style.aboutParagraph"
-                    >
-                        {{ paragraph }}
-                    </p>
                 </div>
             </div>
         </section>
@@ -127,7 +114,13 @@
         <!-- Portfolio Section -->
         <section :class="$style.portfolio">
             <div :class="$style.container">
-                <h2 :class="$style.sectionTitle">Портфолио</h2>
+                <h2 :class="[$style.sectionTitle, $style.portfolioTitle]">
+                    Примеры работ
+                </h2>
+                <p :class="$style.contactSubtitle">
+                    Каждое выступление уникально, как и история влюблённых.
+                    Вдохновитесь примерами моих работ
+                </p>
 
                 <div :class="$style.portfolioGrid">
                     <div
@@ -154,9 +147,11 @@
         <!-- Contact Section -->
         <section :class="$style.contact">
             <div :class="$style.container">
-                <h2 :class="$style.contactTitle">Свяжитесь со мной</h2>
+                <h2 :class="$style.contactTitle">
+                    Готовы создать свой неповторимый номер?
+                </h2>
                 <p :class="$style.contactSubtitle">
-                    Готов обсудить ваш танцевальный номер
+                    Давайте обсудим вашу идею и воплотим её в жизнь!
                 </p>
 
                 <div :class="$style.contactGrid">
@@ -252,32 +247,22 @@ const contacts: Contact = {
 const servicesLeft: Service[] = [
     {
         id: 1,
-        title: "Оригинальные постановки",
-        description: "Под ваш бюджет и пожелания",
+        title: "Индивидуальная постановка первого свадебного танца",
+        description:
+            "Разработаю уникальный танец с нуля, учитывая все ваши пожелания, уровня подготовки и особенности торжества",
     },
     {
         id: 2,
-        title: "Подбор музыки и стиля",
-        description: "Под тематику свадьбы",
+        title: "Подбор музыкальной композиции и концепции номера",
+        description:
+            "Помощь в выборе идеального саундтрека и разработка общей идеи танца",
     },
-];
-
-const servicesRight: Service[] = [
     {
         id: 3,
-        title: "Участие молодоженов",
-        description: "Возможность участия в номере жениха и невесты",
+        title: "Организация аренды репетиционного зала",
+        description:
+            "Помогу найти и арендовать идеальный зал: с оборудованием и подходящей атмосферой",
     },
-    {
-        id: 4,
-        title: "Полный спектр услуг",
-        description: "От идеи до реализации",
-    },
-];
-
-const aboutText: string[] = [
-    "Являюсь действующим спортсменом и тренером по спортивным бальным танцам. Неоднократный призёр Всероссийских и Международных соревнований.",
-    "Каждый номер создается индивидуально под вашу пару и особенности торжества, чтобы сделать ваш день незабываемым.",
 ];
 
 const portfolioVideos: PortfolioVideo[] = [
@@ -501,11 +486,11 @@ const contactMethods: ContactMethod[] = [
     font-weight: 500;
     color: #dc2626;
     margin-bottom: 1.5rem;
+    line-height: 2rem;
 }
 
 .servicesGrid {
     display: grid;
-    grid-template-columns: 1fr;
     gap: 2rem;
     margin: 0 auto;
 }
@@ -514,10 +499,6 @@ const contactMethods: ContactMethod[] = [
     .title {
         font-size: 3rem;
     }
-    .servicesGrid {
-        grid-template-columns: 1fr 1fr;
-    }
-
     .authorName {
         font-size: 1.875rem;
     }
@@ -593,9 +574,9 @@ const contactMethods: ContactMethod[] = [
 }
 
 /* Portfolio Section */
-.portfolio {
+.portfolioTitle {
+    margin-bottom: 0.5rem;
 }
-
 .portfolioGrid {
     display: grid;
     grid-template-columns: 1fr;
