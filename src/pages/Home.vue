@@ -1,58 +1,189 @@
 <template>
-    <div :class="$style.mainContainer">
+    <div :class="$style.container">
         <!-- Hero Section -->
         <section :class="$style.hero">
-            <div :class="$style.container">
+            <div :class="$style.maxWidth">
                 <div :class="$style.heroContent">
-                    <div :class="$style.heroGrid">
-                        <!-- Left Content -->
-                        <div :class="$style.heroLeft">
-                            <div :class="$style.heroText">
-                                <div :class="$style.titleSection">
-                                    <h1 :class="$style.title">
-                                        Профессиональная постановка свадебного
-                                        танца в Челябинске
-                                    </h1>
-                                    <p :class="$style.subtitle">
-                                        Создадим тот самый момент, который
-                                        останется в сердцах. Я верю, что главное
-                                        в свадебном танце – не идеальная
-                                        техника, а искренние эмоции. Моя цель –
-                                        помочь Вам выразить Ваши чувства через
-                                        движения, чтобы создать трогательное и
-                                        незабываемое воспоминание для Вас и
-                                        Ваших гостей
-                                    </p>
-                                </div>
+                    <h1 :class="$style.heroTitle">
+                        Профессиональная постановка свадебного танца в
+                        Челябинске
+                    </h1>
+                    <p :class="$style.heroDescription">
+                        Создадим тот самый момент, который останется в сердцах.
+                        Я верю, что главное в свадебном танце – не идеальная
+                        техника, а искренние эмоции. Моя цель – помочь Вам
+                        выразить Ваши чувства через движения, чтобы создать
+                        трогательное и незабываемое воспоминание для Вас и Ваших
+                        гостей.
+                    </p>
+                    <div :class="$style.buttonGroup">
+                        <button :class="[$style.button, $style.buttonPrimary]">
+                            <PhoneIcon :class="$style.buttonHeaderIcon" />
+                            8(922)632-11-11
+                        </button>
+                        <button :class="[$style.button, $style.buttonOutline]">
+                            <MessageCircleIcon
+                                :class="$style.buttonHeaderIcon"
+                            />
+                            WhatsApp
+                        </button>
+                    </div>
+                </div>
 
-                                <div :class="$style.authorSection">
-                                    <div :class="$style.buttonGroup">
-                                        <a
-                                            :href="contacts.phone.href"
-                                            :class="[
-                                                $style.button,
-                                                $style.buttonPrimary,
-                                            ]"
-                                        >
-                                            <PhoneIcon
-                                                :class="$style.buttonIcon"
-                                            />
-                                            {{ contacts.phone.display }}
-                                        </a>
-                                        <a
-                                            :href="contacts.whatsapp.href"
-                                            :class="[
-                                                $style.button,
-                                                $style.buttonSecondary,
-                                            ]"
-                                            target="_blank"
-                                            rel="noopener noreferrer"
-                                        >
-                                            <MessageCircleIcon
-                                                :class="$style.buttonIcon"
-                                            />
-                                            WhatsApp
-                                        </a>
+                <div :class="$style.heroImages">
+                    <div :class="$style.imageContainer">
+                        <img
+                            src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image-09o1rwj3r8aTGdfm8pHr4FX2d5SCE9.png"
+                            alt="Вадим Томилов - профессиональный танец на сцене"
+                            :class="$style.heroImage"
+                        />
+                    </div>
+                    <div :class="$style.imageContainer">
+                        <img
+                            src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image-AlDsl0oueQN2hqalo98iMFWF9Cc43g.png"
+                            alt="Вадим Томилов на соревнованиях по бальным танцам"
+                            :class="$style.heroImage"
+                        />
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section :class="$style.about">
+            <div :class="$style.maxWidth">
+                <div :class="$style.aboutContent">
+                    <h2 :class="$style.sectionTitle">
+                        Почему мне доверяют самые важные моменты
+                    </h2>
+                    <div :class="$style.aboutText">
+                        <p :class="$style.paragraph">
+                            Меня зовут <strong>Вадим Томилов</strong>. Я —
+                            действующий спортсмен и тренер по спортивным бальным
+                            танцам с опытом более 5 лет.
+                        </p>
+                        <p :class="$style.paragraph">
+                            Создаю не просто движения под музыку, а продуманные
+                            истории, уникальные для каждой пары. Как
+                            неоднократный призёр всероссийских и международных
+                            соревнований, я знаю, как сделать выступление
+                            эффектным и безупречным, чтобы ваш особенный день
+                            стал по-настоящему незабываемым.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Services Section -->
+        <section :class="$style.services">
+            <div :class="$style.maxWidth">
+                <h2 :class="$style.sectionTitle">
+                    Полный спектр услуг для Вашего идеального номера
+                </h2>
+                <div :class="$style.servicesGrid">
+                    <div
+                        v-for="service in services"
+                        :key="service.id"
+                        :class="$style.serviceCard"
+                    >
+                        <div :class="$style.serviceIcon">
+                            <component :is="service.icon" />
+                        </div>
+                        <h3 :class="$style.serviceTitle">
+                            {{ service.title }}
+                        </h3>
+                        <p :class="$style.serviceDescription">
+                            {{ service.description }}
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Work Examples Section -->
+        <section :class="$style.workExamples">
+            <div :class="$style.maxWidth">
+                <h2 :class="$style.sectionTitle">Примеры работ</h2>
+                <p :class="$style.sectionDescription">
+                    Каждое выступление уникально, как и история влюблённых.
+                    Вдохновитесь примерами моих работ
+                </p>
+                <div :class="$style.videoGrid">
+                    <div
+                        v-for="video in videoExamples"
+                        :key="video.id"
+                        :class="$style.videoCard"
+                        @click="toggleVideo(video.id)"
+                        @mouseenter="hoveredVideo = video.id"
+                        @mouseleave="hoveredVideo = null"
+                    >
+                        <div
+                            :class="[
+                                $style.videoContainer,
+                                video.aspectRatio === 'vertical'
+                                    ? $style.videoVertical
+                                    : $style.videoHorizontal,
+                            ]"
+                        >
+                            <!-- Видео -->
+                            <video
+                                :ref="setVideoRef(video.id)"
+                                :src="video.src"
+                                :class="$style.videoThumbnail"
+                                loop
+                                muted
+                                playsinline
+                            />
+
+                            <!-- Оверлей -->
+                            <div
+                                :class="[
+                                    $style.videoOverlay,
+                                    {
+                                        [$style.videoOverlayVisible]:
+                                            playingVideo === video.id,
+                                    },
+                                ]"
+                            >
+                                <button
+                                    :class="$style.playButton"
+                                    @click.stop="toggleVideo(video.id)"
+                                >
+                                    <component
+                                        :is="
+                                            playingVideo === video.id
+                                                ? PauseIcon
+                                                : PlayIcon
+                                        "
+                                    />
+                                </button>
+
+                                <button
+                                    v-if="playingVideo === video.id"
+                                    :class="$style.fullscreenButton"
+                                    @click.stop="toggleFullscreen"
+                                    aria-label="Полноэкранный режим"
+                                >
+                                    <component :is="FullscreenIcon" />
+                                </button>
+                            </div>
+
+                            <!-- Информация -->
+                            <div :class="$style.videoInfo">
+                                <h3 :class="$style.videoTitle">
+                                    {{ video.title }}
+                                </h3>
+                                <div :class="$style.videoMeta">
+                                    <span :class="$style.videoDuration">{{
+                                        video.duration
+                                    }}</span>
+                                    <div :class="$style.videoStatus">
+                                        {{
+                                            playingVideo === video.id
+                                                ? "Воспроизводится"
+                                                : "Нажмите для просмотра"
+                                        }}
                                     </div>
                                 </div>
                             </div>
@@ -62,123 +193,37 @@
             </div>
         </section>
 
-        <!-- About Section -->
-        <section :class="$style.about">
-            <div :class="$style.container">
-                <h2 :class="$style.sectionTitle">
-                    Почему мне доверяют самые важные моменты
-                </h2>
-                <div :class="$style.aboutContent">
-                    <p :class="$style.aboutParagraph">
-                        Меня зовут <b>Вадим Томилов</b>. Я — действующий
-                        спортсмен и тренер по спортивным бальным танцам с опытом
-                        более 5 лет. Создаю не просто движения под музыку, а
-                        продуманные истории, уникальные для каждой пары. Как
-                        неоднократный призёр всероссийских и международных
-                        соревнований, я знаю, как сделать выступление эффектным
-                        и безупречным, чтобы ваш особенный день стал
-                        по-настоящему незабываемым
-                    </p>
-                </div>
-            </div>
-        </section>
-
-        <!-- Services Section -->
-        <section :class="$style.services">
-            <div :class="$style.container">
-                <div :class="$style.serviceContainer">
+        <!-- CTA Section -->
+        <section :class="$style.cta">
+            <div :class="$style.maxWidth">
+                <div :class="$style.ctaContent">
                     <h2 :class="$style.sectionTitle">
-                        Полный спектр услуг для Вашего идеального номера
+                        Готовы создать свой неповторимый номер?
                     </h2>
+                    <p :class="$style.ctaDescription">
+                        Каждый танец — это история любви, рассказанная
+                        движениями. Позвольте мне помочь вам создать тот самый
+                        момент, который останется в памяти навсегда.
+                    </p>
 
-                    <div :class="$style.servicesGrid">
-                        <div :class="$style.servicesColumn">
-                            <div
-                                v-for="service in servicesLeft"
-                                :key="service.id"
-                                :class="$style.serviceItem"
-                            >
-                                <h3 :class="$style.serviceTitle">
-                                    {{ service.title }}
-                                </h3>
-                                <p :class="$style.serviceDescription">
-                                    {{ service.description }}
-                                </p>
-                            </div>
+                    <div :class="$style.ctaFeatures">
+                        <div
+                            v-for="feature in ctaFeatures"
+                            :key="feature"
+                            :class="$style.ctaFeature"
+                        >
+                            <div :class="$style.ctaBullet"></div>
+                            <span>{{ feature }}</span>
                         </div>
                     </div>
-                </div>
-            </div>
-        </section>
 
-        <!-- Portfolio Section -->
-        <section :class="$style.portfolio">
-            <div :class="$style.container">
-                <h2 :class="[$style.sectionTitle, $style.portfolioTitle]">
-                    Примеры работ
-                </h2>
-                <p :class="$style.contactSubtitle">
-                    Каждое выступление уникально, как и история влюблённых.
-                    Вдохновитесь примерами моих работ
-                </p>
-
-                <div :class="$style.portfolioGrid">
-                    <div
-                        v-for="video in portfolioVideos"
-                        :key="video.id"
-                        :class="$style.videoContainer"
-                    >
-                        <video
-                            controls
-                            muted
-                            loop
-                            playsinline
-                            :class="$style.video"
-                            :poster="video.poster"
-                        >
-                            <source :src="video.src" type="video/mp4" />
-                            Ваш браузер не поддерживает видео.
-                        </video>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Contact Section -->
-        <section :class="$style.contact">
-            <div :class="$style.container">
-                <h2 :class="$style.contactTitle">
-                    Готовы создать свой неповторимый номер?
-                </h2>
-                <p :class="$style.contactSubtitle">
-                    Давайте обсудим вашу идею и воплотим её в жизнь!
-                </p>
-
-                <div :class="$style.contactGrid">
-                    <div
-                        v-for="contact in contactMethods"
-                        :key="contact.id"
-                        :class="$style.contactItem"
-                    >
-                        <component
-                            :is="contact.icon"
-                            :class="$style.contactIcon"
-                        />
-                        <h3 :class="$style.contactItemTitle">
-                            {{ contact.title }}
-                        </h3>
-                        <a
-                            :href="contact.href"
-                            :class="$style.contactLink"
-                            :target="contact.external ? '_blank' : undefined"
-                            :rel="
-                                contact.external
-                                    ? 'noopener noreferrer'
-                                    : undefined
-                            "
-                        >
-                            {{ contact.text }}
-                        </a>
+                    <div :class="$style.buttonGroup">
+                        <button :class="[$style.button, $style.buttonPrimary]">
+                            Позвонить сейчас
+                        </button>
+                        <button :class="[$style.button, $style.buttonOutline]">
+                            Написать в WhatsApp
+                        </button>
                     </div>
                 </div>
             </div>
@@ -186,222 +231,302 @@
 
         <!-- Footer -->
         <footer :class="$style.footer">
-            <p :class="$style.footerText">
-                © {{ currentYear }} Вадим Томилов. Челябинск и область.
-            </p>
+            <div :class="$style.maxWidth">
+                <div :class="$style.footerGrid">
+                    <div
+                        v-for="contact in contacts"
+                        :key="contact.type"
+                        :class="$style.footerItem"
+                    >
+                        <component
+                            :is="contact.icon"
+                            :class="$style.footerIcon"
+                        />
+                        <h3 :class="$style.footerTitle">{{ contact.type }}</h3>
+                        <a
+                            :class="$style.footerText"
+                            :href="contact.href"
+                            :target="contact.external ? '_blank' : undefined"
+                            :rel="
+                                contact.external
+                                    ? 'noopener noreferrer'
+                                    : undefined
+                            "
+                            >{{ contact.value }}</a
+                        >
+                    </div>
+                </div>
+                <div :class="$style.footerBottom">
+                    <p :class="$style.footerCopyright">
+                        © 2025 Вадим Томилов. Челябинск и область.
+                    </p>
+                </div>
+            </div>
         </footer>
     </div>
 </template>
 
 <script setup lang="ts">
-import { computed, h } from "vue";
 import {
-    Phone as PhoneIcon,
-    MessageCircle as MessageCircleIcon,
-    Instagram as InstagramIcon,
+    AwardIcon,
+    ClockIcon,
+    FullscreenIcon,
+    HeartIcon,
+    Instagram,
+    MessageCircle,
+    PauseIcon,
+    MessageCircleIcon,
+    PhoneIcon,
+    PlayIcon,
+    UsersIcon,
 } from "lucide-vue-next";
+import { ref, onMounted, onUnmounted, onBeforeUnmount, watch } from "vue";
 
-interface Service {
-    id: number;
-    title: string;
-    description: string;
-}
-
-interface Contact {
-    phone: {
-        href: string;
-        display: string;
-    };
-    whatsapp: {
-        href: string;
-    };
-}
-
-interface ContactMethod {
-    id: number;
-    title: string;
-    text: string;
-    href: string;
-    icon: any;
-    external?: boolean;
-}
-
-interface PortfolioVideo {
-    id: number;
-    src: string;
-    poster: string;
-}
-
-const currentYear = computed(() => new Date().getFullYear());
-
-const contacts: Contact = {
-    phone: {
-        href: "tel:89226321111",
-        display: "8(922)632-11-11",
-    },
-    whatsapp: {
-        href: "https://wa.me/89226321111",
-    },
-};
-
-const servicesLeft: Service[] = [
+// Services data
+const services = ref([
     {
         id: 1,
-        title: "Индивидуальная постановка первого свадебного танца",
+        icon: HeartIcon,
+        title: "Индивидуальная постановка",
         description:
-            "Разработаю уникальный танец с нуля, учитывая все ваши пожелания, уровня подготовки и особенности торжества",
+            "Разрабатываю уникальный танец с нуля, учитывая все ваши пожелания, уровня подготовки и особенности торжества",
     },
     {
         id: 2,
-        title: "Подбор музыкальной композиции и концепции номера",
+        icon: AwardIcon,
+        title: "Подбор музыки и концепции",
         description:
             "Помощь в выборе идеального саундтрека и разработка общей идеи танца",
     },
     {
         id: 3,
-        title: "Организация аренды репетиционного зала",
+        icon: ClockIcon,
+        title: "Аренда репетиционного зала",
         description:
-            "Помогу найти и арендовать идеальный зал: с оборудованием и подходящей атмосферой",
+            "Помогу найти и арендовать идеальный зал с оборудованием и подходящей атмосферой",
     },
-];
+]);
 
-const portfolioVideos: PortfolioVideo[] = [
+const toggleFullscreen = (event: MouseEvent) => {
+    event.stopPropagation(); // Не дать клику закрыть видео
+
+    const videoEl = videoRefs.value[playingVideo.value as string | number];
+    if (!videoEl) return;
+
+    if (document.fullscreenElement) {
+        document.exitFullscreen();
+    } else {
+        videoEl
+            .requestFullscreen()
+            .catch((e) => console.warn("Fullscreen не поддерживается:", e));
+    }
+};
+
+// Video examples data
+const videoExamples = ref([
     {
-        id: 1,
-        src: `/output1.mp4`,
-        poster: `/first_output1.jpg`,
+        id: "1",
+        title: "Классический свадебный танец",
+        duration: "0:26",
+        src: `/t4.mp4`,
+        aspectRatio: "horizontal" as const,
     },
     {
-        id: 2,
+        id: "2",
+        title: "Современная постановка",
+        duration: "0:51",
+        src: `/t1.mp4`,
+        aspectRatio: "vertical" as const,
+    },
+    {
+        id: "3",
+        title: "Романтический вальс",
+        duration: "1:15",
         src: `/output2.mp4`,
-        poster: `/first_output2.jpg`,
+        aspectRatio: "horizontal" as const,
     },
-];
-
-const VkIcon = () =>
-    h(
-        "svg",
-        {
-            class: "h-8 w-8",
-            fill: "currentColor",
-            viewBox: "0 0 24 24",
-        },
-        [
-            h("path", {
-                d: "M15.684 0H8.316C1.592 0 0 1.592 0 8.316v7.368C0 22.408 1.592 24 8.316 24h7.368C22.408 24 24 22.408 24 15.684V8.316C24 1.592 22.408 0 15.684 0zm3.692 17.123h-1.744c-.66 0-.864-.525-2.05-1.727-1.033-1.01-1.49-1.135-1.744-1.135-.356 0-.458.102-.458.593v1.575c0 .424-.135.678-1.253.678-1.846 0-3.896-1.118-5.335-3.202C4.624 10.857 4.03 8.57 4.03 7.348c0-.254.102-.491.593-.491 1.068 0 1.491.763 1.915 1.694.458.966 1.017 2.098 1.694 2.098.254 0 .356-.118.356-.763V8.348c-.085-1.305-.763-1.422-.763-1.896 0-.203.169-.407.441-.407h2.729c.678 0 .932.347.932 1.388v3.659c0 .678.305.932.763.932.254 0 .695-.118 1.727-1.135 1.016-1.017 1.744-2.59 1.744-2.59.102-.254.356-.491.763-.491h1.744c1.017 0 1.253.525.932 1.237-.458 1.152-2.138 3.235-2.138 3.235-.254.356-.356.525 0 .932.254.305 1.084 1.068 1.643 1.727.932 1.118.525 1.694-.407 1.694z",
-            }),
-        ]
-    );
-
-const contactMethods: ContactMethod[] = [
     {
-        id: 1,
-        title: "Телефон",
-        text: "8(922)632-11-11",
-        href: "tel:89226321111",
+        id: "4",
+        title: "Динамичный номер",
+        duration: "0:43",
+        src: `/t2.mp4`,
+        aspectRatio: "vertical" as const,
+    },
+    {
+        id: "5",
+        title: "Нежная постановка",
+        duration: "1:02",
+        src: `/output1.mp4`,
+        aspectRatio: "vertical" as const,
+    },
+    {
+        id: "6",
+        title: "Эмоциональный танец",
+        duration: "0:38",
+        src: `/t3.mp4`,
+        aspectRatio: "vertical" as const,
+    },
+]);
+
+// CTA features
+const ctaFeatures = ref([
+    "Бесплатная консультация по телефону",
+    "Индивидуальный подход к каждой паре",
+    "Гарантия результата",
+]);
+
+// Состояния
+const playingVideo = ref<string | number | null>(null);
+const hoveredVideo = ref<string | number | null>(null);
+
+// Храним ссылки на элементы <video>
+const videoRefs = ref<Record<string | number, HTMLVideoElement | null>>({});
+
+// Привязка рефа к каждому видео
+const setVideoRef = (id: string | number) => (el: HTMLVideoElement | null) => {
+    videoRefs.value[id] = el;
+};
+
+// Переключение воспроизведения
+const toggleVideo = (id: string | number) => {
+    const videoEl = videoRefs.value[id];
+    if (!videoEl) return;
+
+    if (playingVideo.value === id) {
+        videoEl.pause();
+        playingVideo.value = null;
+    } else {
+        // Останавливаем предыдущее видео
+        if (playingVideo.value && videoRefs.value[playingVideo.value]) {
+            videoRefs.value[playingVideo.value].pause();
+        }
+
+        // Запускаем новое
+        videoEl.muted = false;
+        videoEl
+            .play()
+            .catch((e) =>
+                console.warn("Автовоспроизведение заблокировано:", e)
+            );
+        playingVideo.value = id;
+    }
+};
+
+// Очистка при уничтожении компонента
+onBeforeUnmount(() => {
+    Object.values(videoRefs.value).forEach((video) => {
+        if (video) video.pause();
+    });
+});
+
+// Contact data
+const contacts = ref([
+    {
+        type: "Телефон",
+        value: "8(922)632-11-11",
         icon: PhoneIcon,
+        href: "tel:89226321111",
     },
     {
-        id: 2,
-        title: "WhatsApp",
-        text: "Написать",
+        type: "WhatsApp",
+        value: "Написать",
         href: "https://wa.me/89226321111",
-        icon: MessageCircleIcon,
+        icon: MessageCircle,
         external: true,
     },
     {
-        id: 3,
-        title: "VK",
-        text: "Профиль",
+        type: "VK",
+        value: "Профиль",
         href: "https://vk.com/id393654792",
-        icon: VkIcon,
+        icon: UsersIcon,
         external: true,
     },
     {
-        id: 4,
-        title: "Instagram",
-        text: "@tomi_dancer111",
-        href: "https://www.instagram.com/tomi_dancer111?igsh=cDh6aXF2MzRxcnoy&utm_source=qr",
-        icon: InstagramIcon,
+        type: "Instagram",
+        value: "@tomi_dancer111",
+        href: "https://www.instagram.com/tomi_dancer111",
+        icon: Instagram,
         external: true,
     },
-];
+]);
+
+// Mouse events for video hover
+const handleMouseEnter = (videoId: string) => {
+    hoveredVideo.value = videoId;
+};
+
+const handleMouseLeave = () => {
+    hoveredVideo.value = null;
+};
+
+onMounted(() => {
+    // Add mouse event listeners to video cards
+    const videoCards = document.querySelectorAll("[data-video-card]");
+    videoCards.forEach((card, index) => {
+        const videoId = videoExamples.value[index]?.id;
+        if (videoId) {
+            card.addEventListener("mouseenter", () =>
+                handleMouseEnter(videoId)
+            );
+            card.addEventListener("mouseleave", handleMouseLeave);
+        }
+    });
+});
+
+onUnmounted(() => {
+    // Clean up event listeners
+    const videoCards = document.querySelectorAll("[data-video-card]");
+    videoCards.forEach((card) => {
+        card.removeEventListener("mouseenter", handleMouseEnter);
+        card.removeEventListener("mouseleave", handleMouseLeave);
+    });
+});
 </script>
 
 <style module>
 .container {
-    max-width: 1280px;
+    min-height: 100vh;
+    background-color: white;
+    color: black;
+    font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+        sans-serif;
 }
 
-.mainContainer {
-    width: 100%;
-    max-width: 1280px;
+.maxWidth {
+    max-width: 80rem;
     margin: 0 auto;
-    padding-right: 1rem;
-    padding-left: 1rem;
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-    gap: 1.5rem;
+    padding: 0 1rem;
 }
 
 /* Hero Section */
 .hero {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding-top: 3rem;
+    padding: 4rem 1rem 2rem;
+}
+
+@media (min-width: 1024px) {
+    .hero {
+        padding: 6rem 1rem 2rem;
+    }
 }
 
 .heroContent {
-    margin: 0 auto;
-    width: 100%;
+    margin-bottom: 3rem;
 }
 
-.heroGrid {
-    align-items: center;
-}
-
-.heroLeft {
-    display: flex;
-    flex-direction: column;
-    gap: 2rem;
-}
-
-.titleSection {
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
-    margin-bottom: 1rem;
-}
-
-.title {
-    font-size: 2rem;
-    font-weight: 500;
-    color: #dc2626;
+.heroTitle {
+    font-size: clamp(2rem, 5vw, 3.75rem);
+    font-weight: 700;
+    margin-bottom: 2rem;
     line-height: 1.1;
+    text-wrap: balance;
 }
 
-.subtitle {
-    font-size: 1.125rem;
-    color: #4b5563;
-}
-
-.authorSection {
-    display: flex;
-    flex-direction: column;
-    gap: 1.5rem;
-}
-
-.authorName {
-    font-size: 1.5rem;
-    font-weight: 500;
-    color: #111827;
-}
-
-.authorDescription {
-    color: #4b5563;
-    opacity: 0.7;
+.heroDescription {
+    font-size: clamp(1rem, 2vw, 1.25rem);
+    color: #374151;
+    margin-bottom: 2rem;
+    line-height: 1.6;
+    max-width: 64rem;
 }
 
 .buttonGroup {
@@ -416,316 +541,401 @@ const contactMethods: ContactMethod[] = [
     }
 }
 
+.buttonHeaderIcon {
+    width: 1.25rem;
+    height: 1.25rem;
+    margin-right: 0.75rem;
+}
+
 .button {
+    padding: 1rem 2rem;
+    font-size: 1.125rem;
+    font-weight: 600;
+    border-radius: 0.5rem;
+    transition: all 0.2s;
+    cursor: pointer;
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    padding: 1rem 2rem;
-    font-size: 1rem;
-    font-weight: 500;
-    text-decoration: none;
-    border-radius: 0.375rem;
-    transition: all 0.2s;
-}
-
-.buttonIcon {
-    width: 1.25rem;
-    height: 1.25rem;
-    margin-right: 0.5rem;
+    border: none;
 }
 
 .buttonPrimary {
-    background-color: #dc2626;
+    background-color: black;
     color: white;
 }
 
 .buttonPrimary:hover {
-    background-color: #b91c1c;
+    background-color: #1f2937;
 }
 
-.buttonSecondary {
-    border: 1px solid #dc2626;
-    color: #dc2626;
+.buttonOutline {
     background-color: transparent;
+    color: black;
+    border: 2px solid black;
 }
 
-.buttonSecondary:hover {
-    background-color: #fef2f2;
+.buttonOutline:hover {
+    background-color: black;
+    color: white;
 }
 
-.heroRight {
-    position: relative;
+.heroImages {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 3rem;
 }
 
-.heroImage {
-    aspect-ratio: 3/2;
-    position: relative;
+@media (min-width: 1024px) {
+    .heroImages {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+.imageContainer {
     overflow: hidden;
     border-radius: 0.5rem;
 }
 
-.image {
+.heroImage {
     width: 100%;
-    height: 100%;
-    object-fit: cover;
+    height: auto;
+    transition: transform 0.3s;
+    border-radius: 0.5rem;
 }
 
-/* Services Section */
-.services {
-    display: flex;
-}
-
-.serviceContainer {
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-}
-
-.sectionTitle {
-    font-size: 1.5rem;
-    font-weight: 500;
-    color: #dc2626;
-    margin-bottom: 1.5rem;
-    line-height: 2rem;
-}
-
-.servicesGrid {
-    display: grid;
-    gap: 2rem;
-    margin: 0 auto;
-}
-
-@media (min-width: 768px) {
-    .title {
-        font-size: 3rem;
-    }
-    .authorName {
-        font-size: 1.875rem;
-    }
-
-    .sectionTitle {
-        font-size: 1.875rem;
-        margin-bottom: 1.875rem;
-    }
-
-    .mainContainer {
-        gap: 1.875rem;
-    }
-}
-
-@media (min-width: 1024px) {
-    .title {
-        font-size: 4rem;
-    }
-
-    .authorName {
-        font-size: 2rem;
-    }
-    .sectionTitle {
-        font-size: 1.875rem;
-        margin-bottom: 2rem;
-    }
-
-    .mainContainer {
-        gap: 2rem;
-    }
-}
-
-.servicesColumn {
-    display: flex;
-    flex-direction: column;
-    gap: 2rem;
-}
-
-.serviceItem {
-    border-left: 4px solid #dc2626;
-    padding-left: 1.5rem;
-}
-
-.serviceTitle {
-    font-size: 1.125rem;
-    font-weight: 500;
-    color: #111827;
-    margin-bottom: 0.5rem;
-}
-
-.serviceDescription {
-    color: #4b5563;
-    font-size: 1.125rem;
+.heroImage:hover {
+    transform: scale(1.05);
 }
 
 /* About Section */
 .about {
-    background-color: white;
-}
-
-.aboutContent {
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
-    font-size: 1.125rem;
-    color: #374151;
-    line-height: 1.75;
-    margin: 0 auto;
-}
-
-.aboutParagraph {
-    margin: 0;
-}
-
-/* Portfolio Section */
-.portfolioTitle {
-    margin-bottom: 0.5rem;
-}
-.portfolioGrid {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 2rem;
-    margin: 0 auto;
-}
-
-@media (min-width: 768px) {
-    .portfolioGrid {
-        grid-template-columns: 1fr 1fr;
-    }
-}
-
-@media (min-width: 1024px) {
-    .portfolioGrid {
-        grid-template-columns: 1fr 1fr 1fr;
-    }
-}
-
-.videoContainer {
-    aspect-ratio: 3/4;
-    position: relative;
-    overflow: hidden;
-    border-radius: 0.5rem;
-    background-color: #f3f4f6;
-}
-
-.video {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-}
-
-/* Contact Section */
-.contact {
-}
-
-.contactTitle {
-    font-size: 1.5rem;
-    font-weight: 500;
-    color: #dc2626;
-}
-
-@media (min-width: 768px) {
-    .contactTitle {
-        font-size: 1.875rem;
-    }
-}
-
-@media (min-width: 1024px) {
-    .contactTitle {
-        font-size: 1.875rem;
-    }
-}
-
-.contactSubtitle {
-    margin-bottom: 1.875rem;
-    opacity: 0.8;
-    font-size: 1.125rem;
-}
-
-.contactGrid {
-    display: grid;
-    gap: 2rem;
-}
-
-@media (min-width: 768px) {
-    .contactGrid {
-        grid-template-columns: 1fr 1fr;
-    }
-}
-
-@media (min-width: 1024px) {
-    .contactGrid {
-        grid-template-columns: 1fr 1fr 1fr 1fr;
-    }
-}
-
-.contactItem {
-    text-align: center;
-}
-
-.contactIcon {
-    width: 2rem;
-    height: 2rem;
-    margin: 0 auto 1rem;
-}
-
-.contactItemTitle {
-    font-weight: 500;
-    margin-bottom: 0.5rem;
-}
-
-.contactLink {
-    color: #dc2626;
-    text-decoration: none;
-    opacity: 0.9;
-    transition: opacity 0.2s;
-}
-
-.contactLink:hover {
-    opacity: 1;
-    text-decoration: underline;
-}
-
-.contactButtons {
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
-    justify-content: center;
-    max-width: 1024px;
-    margin: 0 auto;
-}
-
-@media (min-width: 640px) {
-    .contactButtons {
-        flex-direction: row;
-    }
-}
-
-.buttonWhite {
-    background-color: white;
-    color: #dc2626;
-}
-
-.buttonWhite:hover {
-    background-color: #f3f4f6;
-}
-
-.buttonOutline {
-    border: 1px solid white;
-    color: white;
-    background-color: transparent;
-}
-
-.buttonOutline:hover {
-    background-color: white;
-    color: #dc2626;
-}
-
-/* Footer */
-.footer {
     padding: 1rem 1rem;
     background-color: white;
 }
 
-.footerText {
-    color: #6b7280;
+.aboutContent {
+    margin-bottom: 0rem;
+}
+
+.sectionTitle {
+    font-size: clamp(1.875rem, 4vw, 2.5rem);
+    font-weight: 700;
+    margin-bottom: 2rem;
+    text-wrap: balance;
+}
+
+.aboutText {
+    font-size: 1.125rem;
+    line-height: 1.6;
+    max-width: 64rem;
+}
+
+.paragraph {
+    margin-bottom: 1rem;
+}
+
+/* Services Section */
+.services {
+    padding: 1rem 1rem;
+}
+
+.servicesGrid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+}
+
+@media (min-width: 768px) {
+    .servicesGrid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+.serviceCard {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 2rem;
+    background-color: #f9fafb;
+    border-radius: 0.5rem;
+    transition: background-color 0.2s;
+}
+
+.serviceCard:hover {
+    background-color: #f3f4f6;
+}
+
+.serviceIcon {
+    background-color: black;
+    color: white;
+    padding: 0.75rem;
+    border-radius: 0.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.serviceTitle {
+    font-size: 1.25rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+}
+
+.serviceDescription {
+    color: #374151;
+    line-height: 1.6;
+}
+
+/* Work Examples Section */
+.workExamples {
+    padding: 1rem 1rem;
+    padding-bottom: 1rem;
+    background-color: white;
+}
+
+.sectionDescription {
+    font-size: 1.125rem;
+    color: #374151;
+    margin-bottom: 3rem;
+    line-height: 1.6;
+}
+
+.videoGrid {
+    columns: 1;
+    column-gap: 1.5rem;
+}
+
+@media (min-width: 768px) {
+    .videoGrid {
+        columns: 2;
+    }
+}
+
+@media (min-width: 1024px) {
+    .videoGrid {
+        columns: 3;
+    }
+}
+
+.videoCard {
+    break-inside: avoid;
+    margin-bottom: 1.5rem;
+    cursor: pointer;
+}
+
+.videoContainer {
+    position: relative;
+    overflow: hidden;
+    border-radius: 0.5rem;
+    background-color: black;
+    transition: transform 0.3s;
+}
+
+.videoContainer:hover {
+    transform: translateY(-0.25rem);
+}
+
+.videoHorizontal {
+    aspect-ratio: 16/9;
+}
+
+.videoVertical {
+    aspect-ratio: 9/16;
+}
+
+.videoThumbnail {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s;
+}
+
+.videoContainer:hover .videoThumbnail {
+    transform: scale(1.05);
+}
+
+.videoOverlay {
+    position: absolute;
+    inset: 0;
+    background-color: rgba(0, 0, 0, 0.4);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 1;
+    transition: opacity 0.3s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 16px; /* между кнопками */
+}
+
+.videoOverlayVisible {
+    opacity: 0;
+}
+
+.videoOverlayVisible:hover {
+    opacity: 1;
+}
+
+.fullscreenButton {
+    background: rgba(0, 0, 0, 0.6);
+    border: none;
+    color: white;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: background 0.2s;
+    pointer-events: auto; /* кнопки кликабельны */
+}
+
+.playButton:hover,
+.fullscreenButton:hover {
+    background: #000;
+}
+
+/* Стиль для иконок внутри кнопок */
+.playButton svg,
+.fullscreenButton svg {
+    width: 24px;
+    height: 24px;
+    fill: white;
+}
+
+.playButton {
+    background-color: rgba(255, 255, 255, 0.9);
+    border: none;
+    border-radius: 50%;
+    padding: 1rem;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.playButton:hover {
+    background-color: white;
+    transform: scale(1.1);
+}
+
+.videoInfo {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.8), transparent);
+    padding: 1rem;
+}
+
+.videoTitle {
+    color: white;
+    font-weight: 600;
+    font-size: 0.875rem;
+    margin-bottom: 0.25rem;
+}
+
+.videoMeta {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.videoDuration {
+    color: #d1d5db;
+    font-size: 0.75rem;
+}
+
+.videoStatus {
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 0.25rem 0.5rem;
+    border-radius: 0.25rem;
+    font-size: 0.75rem;
+    color: white;
+}
+
+/* CTA Section */
+.cta {
+    padding: 4rem 1rem;
+    padding-top: 1rem;
+    background-color: white;
+}
+
+.ctaContent {
+    max-width: 64rem;
+}
+
+.ctaDescription {
+    font-size: 1.125rem;
+    color: #374151;
+    margin-bottom: 2rem;
+    line-height: 1.6;
+}
+
+.ctaFeatures {
+    margin-bottom: 2rem;
+}
+
+.ctaFeature {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    margin-bottom: 1rem;
+}
+
+.ctaBullet {
+    width: 0.5rem;
+    height: 0.5rem;
+    background-color: black;
+    border-radius: 50%;
+}
+
+/* Footer */
+.footer {
+    background-color: black;
+    color: white;
+    padding: 3rem 1rem;
+}
+
+.footerGrid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
     text-align: center;
-    margin: 0 auto;
+}
+
+@media (min-width: 768px) {
+    .footerGrid {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+
+.footerItem {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.footerIcon {
+    margin-bottom: 1rem;
+}
+
+.footerTitle {
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+}
+
+.footerText {
+    color: #d1d5db;
+}
+
+.footerBottom {
+    text-align: center;
+    margin-top: 3rem;
+    padding-top: 2rem;
+    border-top: 1px solid #374151;
+}
+
+.footerCopyright {
+    color: #9ca3af;
 }
 </style>
