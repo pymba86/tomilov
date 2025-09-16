@@ -17,16 +17,22 @@
                         гостей
                     </p>
                     <div :class="$style.buttonGroup">
-                        <button :class="[$style.button, $style.buttonPrimary]">
+                        <a
+                            :class="[$style.button, $style.buttonPrimary]"
+                            :href="buttonContacts.phone"
+                        >
                             <PhoneIcon :class="$style.buttonHeaderIcon" />
                             8(922)632-11-11
-                        </button>
-                        <button :class="[$style.button, $style.buttonOutline]">
+                        </a>
+                        <a
+                            :class="[$style.button, $style.buttonOutline]"
+                            :href="buttonContacts.whatsapp"
+                        >
                             <MessageCircleIcon
                                 :class="$style.buttonHeaderIcon"
                             />
                             WhatsApp
-                        </button>
+                        </a>
                     </div>
                 </div>
 
@@ -38,14 +44,14 @@
                         ]"
                     >
                         <img
-                            src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image-09o1rwj3r8aTGdfm8pHr4FX2d5SCE9.png"
+                            src="/hero1.png"
                             alt="Вадим Томилов - профессиональный танец на сцене"
                             :class="$style.heroImage"
                         />
                     </div>
                     <div :class="$style.imageContainer">
                         <img
-                            src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image-AlDsl0oueQN2hqalo98iMFWF9Cc43g.png"
+                            src="/hero2.png"
                             alt="Вадим Томилов на соревнованиях по бальным танцам"
                             :class="$style.heroImage"
                         />
@@ -210,12 +216,18 @@
                     </p>
 
                     <div :class="$style.buttonGroup">
-                        <button :class="[$style.button, $style.buttonPrimary]">
+                        <a
+                            :class="[$style.button, $style.buttonPrimary]"
+                            :href="buttonContacts.phone"
+                        >
                             Позвонить сейчас
-                        </button>
-                        <button :class="[$style.button, $style.buttonOutline]">
+                        </a>
+                        <a
+                            :class="[$style.button, $style.buttonOutline]"
+                            :href="buttonContacts.whatsapp"
+                        >
                             Написать в WhatsApp
-                        </button>
+                        </a>
                     </div>
                 </div>
             </div>
@@ -436,6 +448,11 @@ const contacts = ref([
     },
 ]);
 
+const buttonContacts = {
+    phone: "tel:89226321111",
+    whatsapp: "https://wa.me/89226321111",
+};
+
 // Mouse events for video hover
 const handleMouseEnter = (videoId: string) => {
     hoveredVideo.value = videoId;
@@ -512,7 +529,6 @@ onUnmounted(() => {
     color: #374151;
     margin-bottom: 2rem;
     line-height: 1.6;
-    max-width: 64rem;
 }
 
 .buttonGroup {
@@ -530,7 +546,7 @@ onUnmounted(() => {
 .buttonHeaderIcon {
     width: 1.25rem;
     height: 1.25rem;
-    margin-right: 0.75rem;
+    margin-right: 1rem;
 }
 
 .button {
@@ -544,6 +560,8 @@ onUnmounted(() => {
     align-items: center;
     justify-content: center;
     border: none;
+    line-height: 1;
+    text-decoration: none;
 }
 
 .buttonPrimary {
@@ -552,7 +570,7 @@ onUnmounted(() => {
 }
 
 .buttonPrimary:hover {
-    background-color: #1f2937;
+    background-color: #282828;
 }
 
 .buttonOutline {
@@ -562,7 +580,7 @@ onUnmounted(() => {
 }
 
 .buttonOutline:hover {
-    background-color: black;
+    background-color: #282828;
     color: white;
 }
 
@@ -623,7 +641,6 @@ onUnmounted(() => {
 .aboutText {
     font-size: 1.125rem;
     line-height: 1.6;
-    max-width: 64rem;
 }
 
 .videoThumbnail:fullscreen {
@@ -889,7 +906,7 @@ onUnmounted(() => {
 }
 
 .ctaContent {
-    max-width: 64rem;
+    width: 100%;
 }
 
 .ctaDescription {
@@ -949,18 +966,26 @@ onUnmounted(() => {
 
 .footerTitle {
     font-weight: 600;
-    margin-bottom: 0.5rem;
+    margin-bottom: 1rem;
 }
 
 .footerText {
-    color: #d1d5db;
+    background-color: #1f1f1f;
+    padding: 12px 32px;
+    border-radius: 6px;
+    color: white;
+    text-decoration: none;
+    width: 100%;
+}
+
+.footerText:hover {
+    background-color: #282828;
 }
 
 .footerBottom {
     text-align: center;
     margin-top: 3rem;
     padding-top: 2rem;
-    border-top: 1px solid #374151;
 }
 
 .footerCopyright {

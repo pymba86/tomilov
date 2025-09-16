@@ -1,6 +1,8 @@
 {
   "\u0000plugin-vue:export-helper": [],
   "\u0000vite/modulepreload-polyfill.js": [],
+  "../../../../../hero1.png": [],
+  "../../../../../hero2.png": [],
   "index.html": [],
   "node_modules/@unhead/vue/dist/client.mjs": [],
   "node_modules/@unhead/vue/dist/shared/vue.BYLJNEcq.mjs": [],
