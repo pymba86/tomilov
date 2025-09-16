@@ -970,8 +970,7 @@ onUnmounted(() => {
 }
 
 .footerText {
-    background-color: #1f1f1f;
-    padding: 12px 32px;
+    padding: 6px;
     border-radius: 6px;
     color: white;
     text-decoration: none;
