@@ -14,7 +14,7 @@
                         техника, а искренние эмоции. Моя цель – помочь Вам
                         выразить Ваши чувства через движения, чтобы создать
                         трогательное и незабываемое воспоминание для Вас и Ваших
-                        гостей.
+                        гостей
                     </p>
                     <div :class="$style.buttonGroup">
                         <button :class="[$style.button, $style.buttonPrimary]">
@@ -31,7 +31,12 @@
                 </div>
 
                 <div :class="$style.heroImages">
-                    <div :class="$style.imageContainer">
+                    <div
+                        :class="[
+                            $style.imageContainer,
+                            $style.heroImagePreview,
+                        ]"
+                    >
                         <img
                             src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image-09o1rwj3r8aTGdfm8pHr4FX2d5SCE9.png"
                             alt="Вадим Томилов - профессиональный танец на сцене"
@@ -201,21 +206,8 @@
                         Готовы создать свой неповторимый номер?
                     </h2>
                     <p :class="$style.ctaDescription">
-                        Каждый танец — это история любви, рассказанная
-                        движениями. Позвольте мне помочь вам создать тот самый
-                        момент, который останется в памяти навсегда.
+                        Давайте обсудим вашу идею и воплотим её в жизнь!
                     </p>
-
-                    <div :class="$style.ctaFeatures">
-                        <div
-                            v-for="feature in ctaFeatures"
-                            :key="feature"
-                            :class="$style.ctaFeature"
-                        >
-                            <div :class="$style.ctaBullet"></div>
-                            <span>{{ feature }}</span>
-                        </div>
-                    </div>
 
                     <div :class="$style.buttonGroup">
                         <button :class="[$style.button, $style.buttonPrimary]">
@@ -327,43 +319,37 @@ const videoExamples = ref([
     {
         id: "1",
         title: "Классический свадебный танец",
-        duration: "0:26",
+        duration: "2:18",
         src: `/t4.mp4`,
         aspectRatio: "horizontal" as const,
+    },
+
+    {
+        id: "6",
+        title: "Эмоциональный танец",
+        duration: "2:31",
+        src: `/t3.mp4`,
+        aspectRatio: "vertical" as const,
     },
     {
         id: "2",
         title: "Современная постановка",
-        duration: "0:51",
+        duration: "2:24",
         src: `/t1.mp4`,
         aspectRatio: "vertical" as const,
     },
     {
         id: "3",
         title: "Романтический вальс",
-        duration: "1:15",
-        src: `/output2.mp4`,
+        duration: "0:51",
+        src: `/t5.mp4`,
         aspectRatio: "horizontal" as const,
     },
     {
         id: "4",
         title: "Динамичный номер",
-        duration: "0:43",
+        duration: "2:07",
         src: `/t2.mp4`,
-        aspectRatio: "vertical" as const,
-    },
-    {
-        id: "5",
-        title: "Нежная постановка",
-        duration: "1:02",
-        src: `/output1.mp4`,
-        aspectRatio: "vertical" as const,
-    },
-    {
-        id: "6",
-        title: "Эмоциональный танец",
-        duration: "0:38",
-        src: `/t3.mp4`,
         aspectRatio: "vertical" as const,
     },
 ]);
@@ -500,12 +486,12 @@ onUnmounted(() => {
 
 /* Hero Section */
 .hero {
-    padding: 4rem 1rem 2rem;
+    padding: 4rem 1rem 1rem;
 }
 
 @media (min-width: 1024px) {
     .hero {
-        padding: 6rem 1rem 2rem;
+        padding: 6rem 1rem 1rem;
     }
 }
 
@@ -586,9 +572,17 @@ onUnmounted(() => {
     gap: 3rem;
 }
 
+.heroImagePreview {
+    display: none;
+}
+
 @media (min-width: 1024px) {
     .heroImages {
         grid-template-columns: 1fr 1fr;
+    }
+
+    .heroImagePreview {
+        display: block;
     }
 }
 
@@ -631,6 +625,33 @@ onUnmounted(() => {
     max-width: 64rem;
 }
 
+.videoThumbnail:fullscreen {
+    width: auto;
+    height: 100vh;
+    max-width: 100vw;
+    max-height: 100vh;
+    object-fit: contain;
+    margin: 0 auto;
+    background: #000;
+}
+
+/* Альтернативные префиксы (на всякий случай) */
+.videoThumbnail::-webkit-full-screen {
+    width: auto;
+    height: 100vh;
+    object-fit: contain;
+    margin: 0 auto;
+    background: #000;
+}
+
+.videoThumbnail:-moz-full-screen {
+    width: auto;
+    height: 100vh;
+    object-fit: contain;
+    margin: 0 auto;
+    background: #000;
+}
+
 .paragraph {
     margin-bottom: 1rem;
 }
@@ -656,10 +677,16 @@ onUnmounted(() => {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    padding: 2rem;
+    padding: 1rem;
     background-color: #f9fafb;
     border-radius: 0.5rem;
     transition: background-color 0.2s;
+}
+
+@media (min-width: 768px) {
+    .serviceCard {
+        padding: 2rem;
+    }
 }
 
 .serviceCard:hover {
