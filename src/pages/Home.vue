@@ -503,7 +503,7 @@ onUnmounted(() => {
     font-size: clamp(2rem, 5vw, 3.75rem);
     font-weight: 700;
     margin-bottom: 2rem;
-    line-height: 1.1;
+    line-height: 1.25;
     text-wrap: balance;
 }
 
@@ -616,6 +616,7 @@ onUnmounted(() => {
     font-size: clamp(1.875rem, 4vw, 2.5rem);
     font-weight: 700;
     margin-bottom: 2rem;
+    line-height: 1.25;
     text-wrap: balance;
 }
 
